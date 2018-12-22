@@ -1,5 +1,5 @@
-def cs_service_bot():
-    # Replace `pass` with your code
+# Main function
+def cs_service_bot():    
     print("Hello! Welcome to the DNS Cable Company's Service Portal. Are you a new or existing customer?\n[1] New customer\n[2] Existing Customer")
     response = input("Please enter the number corresponding to your choice: ")
     if response == "1":
@@ -10,8 +10,8 @@ def cs_service_bot():
         print("Sorry, we didn't understand your selection.")
         cs_service_bot()
 
-def existing_customer():
-    # Replace `pass` with your code
+# Existing customer prompt
+def existing_customer():    
     print("What kind of support do you need?\n[1] television Support\n[2] Internet Support\n[3] Speak to a support representative.")
     response = input("Please enter the number corresponding to your choice: ")
     if response == "1":
@@ -24,8 +24,8 @@ def existing_customer():
         print("Sorry, we didn't understand your selection")
         existing_customer()
 
-def new_customer():
-    # Replace `pass` with your code
+# New customer prompt
+def new_customer():    
     print("[1] Sign up for service.\n[2] Schedule a home visit.\n[3] Speak to a sales representative.")
     response = input("Please enter the number corresponding to your choice: ")
     if response == "1":
@@ -38,8 +38,8 @@ def new_customer():
         print("Sorry, we didn't understand your selection")
         new_customer()
 
-def television_support():
-    # Replace `pass` with your code
+# Television support prompt
+def television_support():    
     print("What is the nature of your problem?\n[1] I can't access certain channels.\nMy picture is blurry.\n[3] I keep losing service.\n[4] Other issues.")
     response = input("Please enter the number corresponding to your choice: ")
     if response == "1":
@@ -57,8 +57,8 @@ def television_support():
         print("Sorry, we didn't understand your selection")
         televison_support()
 
-def internet_support():
-    # Replace `pass` with your code
+# Internet support prompt
+def internet_support():    
     print("[1] I can't connect to the internet.\n[2] My connection is very slow.\n[3] I can't access certain sites.")
     response = input("Please enter the number corresponding to your choice: ")
     if response == "1":
@@ -76,8 +76,8 @@ def internet_support():
         print("Sorry, we didn't understand your selection")
         internet_support()
 
-def did_that_help():
-    # Replace `pass` with your code
+# Did that help prompt
+def did_that_help():    
     print("Did that solve the problem?\n[1] Yes\n[2] No")
     response = input("Please enter the number corresponding to your choice: ")
     if response == "1":
@@ -96,8 +96,8 @@ def did_that_help():
         print("Sorry, we didn't understand your selection")
         did_that_help()
 
-def sign_up():
-    # Replace `pass` with your code
+# Sign up prompt
+def sign_up():    
     print("Great choice, friend! We're excited to have you join the DNS family! Please select the package you are interested in signing up for.\n[1] Bundle Deal (Internet + Cable)\n[2] Internet\n[3] Cable")
     response = input("Please enter the number corresponding to your choice: ")
     if response == "1":
@@ -113,8 +113,8 @@ def sign_up():
         print("Sorry, we didn't understand your selection")
         sign_up()
 
-def home_visit(purpose="none"):
-    # Replace `pass` with your code
+# Home visit prompt
+def home_visit(purpose="none"):    
     if purpose == "none":
         print("What is the purpose of your home visit?\n[1] New service installation.\n[2] Existing service repair.\n[3] Location scouting for unserviced regions.")
         if response == "1":
@@ -140,13 +140,10 @@ def home_visit(purpose="none"):
         print("Please enter a date below when you are available for a technician to come scout your region for expansion:")
         visit_date = input("Date: ")
         return visit_date
-        
-def live_rep(purpose):
-    # Replace `pass` with your code
+
+# Live rep prompt        
+def live_rep(purpose):    
     if purpose == "sales":
         print ("Please hold while we connect you with a live sales representative. The wait time will be between two minutes and six hours. We thank you for your patience.")
     if purpose == "support":
         print("Please hold while we connect you with a live support representative. The wait time will be between two minutes and six hours. We thank you for your patience.")
-        
-
-cs_service_bot()
