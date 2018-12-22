@@ -12,16 +12,16 @@ def cs_service_bot():
 
 # Existing customer prompt
 def existing_customer():    
-    print("What kind of support do you need?\n[1] television Support\n[2] Internet Support\n[3] Speak to a support representative.")
+    print("What kind of support do you need?\n[1] Television Support\n[2] Internet Support\n[3] Speak to a support representative.")
     response = input("Please enter the number corresponding to your choice: ")
     if response == "1":
-        televison_support()
+        television_support()
     elif response == "2":
         internet_support()
     elif response == "3":
         live_rep(support)
     else:
-        print("Sorry, we didn't understand your selection")
+        print("Sorry, we didn't understand your selection.")
         existing_customer()
 
 # New customer prompt
@@ -35,27 +35,27 @@ def new_customer():
     elif response == "3":
         live_rep()
     else:
-        print("Sorry, we didn't understand your selection")
+        print("Sorry, we didn't understand your selection.")
         new_customer()
 
 # Television support prompt
 def television_support():    
-    print("What is the nature of your problem?\n[1] I can't access certain channels.\nMy picture is blurry.\n[3] I keep losing service.\n[4] Other issues.")
+    print("What is the nature of your problem?\n[1] I can't access certain channels.\n[2] My picture is blurry.\n[3] I keep losing service.\n[4] Other issues.")
     response = input("Please enter the number corresponding to your choice: ")
     if response == "1":
         print("Please check the channel lists at DefinitelyNotSinister.com. If the channel you cannot access is there, please contact a live representative.")
-        did-that_help()
-    if response == "2":
-        print("Try adjusting tje antenna above your television set.")
         did_that_help()
-    if response == "3":
-        print("Is it raining outside? If so, wait until it is not raining and the try again.")
+    elif response == "2":
+        print("Try adjusting the antenna above your television set.")
+        did_that_help()
+    elif response == "3":
+        print("Is it raining outside? If so, wait until it is not raining and then try again.")
         did_that_help()
     elif response == "4":
         live_rep("support")
     else:
-        print("Sorry, we didn't understand your selection")
-        televison_support()
+        print("Sorry, we didn't understand your selection.")
+        television_support()
 
 # Internet support prompt
 def internet_support():    
@@ -64,16 +64,16 @@ def internet_support():
     if response == "1":
         print("Unplug your router, then plug it back in, then give it a good whack, like the Fonz.")
         did_that_help()
-    if response == "2":
+    elif response == "2":
         print("Make sure that all cell phones and other peoples computers are not connected to the internet, so that you can have all the bandwidth.")
         did_that_help()
-    if response == "3":
+    elif response == "3":
         print("Move to a different region or install a VPN. Some areas block certain sites.")
         did_that_help()
-    if response == "4":
+    elif response == "4":
         live_rep("support")
     else:
-        print("Sorry, we didn't understand your selection")
+        print("Sorry, we didn't understand your selection.")
         internet_support()
 
 # Did that help prompt
@@ -83,14 +83,14 @@ def did_that_help():
     if response == "1":
         print("Great! Have a wonderful day.")
     elif response == "2":
-        print("We're sorry. Would you like to talk to a live representative or schedule a home visit to address your problem?\n[1] Live Representative [2] Home Visit")
+        print("We're sorry. Would you like to talk to a live representative or schedule a home visit to address your problem?\n[1] Live Representative\n[2] Home Visit")
         response_two = input("Please enter the number corresponding to your choice: ")
         if response_two == "1":
             live_rep("support")
         elif response_two == "2":
             home_visit("support")
         else:
-            Print("Sorry, we didn't understand your selection")
+            Print("Sorry, we didn't understand your selection.")
             did_that_help()
     else:
         print("Sorry, we didn't understand your selection")
@@ -110,7 +110,7 @@ def sign_up():
         print("You've selected the Cable Only Package! Please schedule a home visit and our technician will come and set up your new service.")
         home_visit("new install")
     else:
-        print("Sorry, we didn't understand your selection")
+        print("Sorry, we didn't understand your selection.")
         sign_up()
 
 # Home visit prompt
@@ -124,7 +124,7 @@ def home_visit(purpose="none"):
         elif response == "3":
             home_visit("scout")
         else:
-            print("Sorry, we didn't understand your selection")
+            print("Sorry, we didn't understand your selection.")
             home_visit("none")
     if purpose == "new install":
         print("Please enter a date below when you are available for a technician to come to your home and install your new service.")
@@ -145,5 +145,8 @@ def home_visit(purpose="none"):
 def live_rep(purpose):    
     if purpose == "sales":
         print ("Please hold while we connect you with a live sales representative. The wait time will be between two minutes and six hours. We thank you for your patience.")
-    if purpose == "support":
+    elif purpose == "support":
         print("Please hold while we connect you with a live support representative. The wait time will be between two minutes and six hours. We thank you for your patience.")
+
+# Call Customer Service Bot function
+cs_service_bot()
